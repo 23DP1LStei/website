@@ -7,7 +7,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="src\css\style.css">
     </head>
     <body>
         <nav>
@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="column-right"> 
-                    <img src="logo.png" alt="illustration" class="hero-image">
+                    <img src="src\media\logo.png" alt="illustration" class="hero-image">
                 </div>
 
             </div>
@@ -81,25 +81,10 @@
             <button id="playButton">Atskaņot audio</button>
             <button id="stopButton">Beigt</button>
 
-            <audio id="sound" src="audio.mp3"></audio>
+            <audio id="sound" src="src/media/audio.mp3"></audio>
         
-            <script>
 
-                const playButton = document.getElementById('playButton');
-                const stopButton = document.getElementById('stopButton');
-                const sound = document.getElementById('sound');
-        
-                
-                playButton.addEventListener('click', function() {
-                    sound.play(); 
-                });
-        
-     
-                stopButton.addEventListener('click', function() {
-                    sound.pause(); 
-                    sound.currentTime = 0;
-                });
-            </script>
+            <script src="src\js\script.js"></script>
 
           </section>
 
@@ -111,21 +96,9 @@
                 <button class="refresh-button" onclick="getCatFact()">Iegūt jaunu faktu</button>
             </div>
         
-            <script>
-                
-                async function getCatFact() {
-                    try {
-                        const response = await fetch('https://catfact.ninja/fact');
-                        const data = await response.json();
-                        document.getElementById('fact').innerText = data.fact;
-                    } catch (error) {
-                        document.getElementById('fact').innerText = 'Neizdevās ielādēt faktu. Vēlāk mēģiniet vēlreiz.';
-                    }
-                }
-        
-                
-                window.onload = getCatFact;
-            </script>
+
+            <script src="src\js\script_cat_fact.js"></script>
+            
         </section>
           <footer>
             <div class="footer-content">
